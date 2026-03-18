@@ -19,9 +19,9 @@ public class SuburbController : ControllerBase
     {
         var result = _service.GetByName(name);
 
-        if (result == null)
-            return NotFound();
+        if (result == null || result.Count == 0)
+            return NotFound(new { message = $"No stats found for suburb: {name}" });
 
-        return Ok(result);
+        return Ok(result.First());
     }
 }

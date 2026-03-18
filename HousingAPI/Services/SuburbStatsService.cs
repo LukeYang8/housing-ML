@@ -18,10 +18,8 @@ public class SuburbService
         _data = res;
     }
 
-    public SuburbStats? GetByName(string name)
+    public List<SuburbStats> GetByName(string name)
     {
-        return _data.FirstOrDefault(
-            x => x.locality.ToLower() == name.ToLower()
-        );
+        return _data.Where(x => x.locality.ToLower() == name.ToLower()).ToList();
     }
 }
