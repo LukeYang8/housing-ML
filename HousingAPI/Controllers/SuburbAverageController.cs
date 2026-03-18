@@ -1,20 +1,27 @@
 using Microsoft.AspNetCore.Mvc;
-using System.Text.Encodings.Web;
+using HousingAPI.Services;
 
-namespace MvcMovie.Controllers;
+namespace HousingAPI.Controllers;
 
-public class SuburbAverageController : Controller
+[ApiController]
+[Route("suburb")]
+public class SuburbController : ControllerBase
 {
-    // 
-    // GET: /SuburbAverage/
-    public string Index()
+    private readonly SuburbService _service;
+
+    public SuburbController(SuburbService service)
     {
-        return "This is my default action...";
+        _service = service;
     }
-    // 
-    // GET: /SuburbAverage/Welcome/ 
-    public string Welcome()
+
+    [HttpGet("{name}")]
+    public IActionResult Get(string name)
     {
-        return "This is the Welcome action method...";
+        var result = _service.GetByName(name);
+
+        if (result == null)
+            return NotFound();
+
+        return Ok(result);
     }
 }

@@ -26,7 +26,7 @@ suburb_stats = average_price_by_suburb.groupby("locality").agg(
     median_price=("purchase_price", "median"),
     num_sales=("purchase_price", "count")
 ).reset_index()
-suburb_stats.to_parquet("../data/suburb_stats.parquet", index=False)
+suburb_stats.to_json("../data/suburb_stats.json", orient="records")
 
 # calculate yearly trends by suburb
 yearly_trends = average_price_by_suburb.groupby(["locality", "sale_year"]).agg(
@@ -34,7 +34,7 @@ yearly_trends = average_price_by_suburb.groupby(["locality", "sale_year"]).agg(
     median_price=("purchase_price", "median"),
     num_sales=("purchase_price", "count")
 ).reset_index()
-yearly_trends.to_parquet("../data/suburb_trends.parquet", index=False)
+yearly_trends.to_json("../data/suburb_trends.json", orient="records")
 
 
 # for the model, we will only use the following features:
@@ -50,4 +50,4 @@ ml_features = ["land_area",
 ml_df = df[ml_features + ["purchase_price"]].copy()
 ml_df.dropna(inplace=True)  
 
-ml_df.to_parquet("../data/ml_data.parquet", index=False)
+ml_df.to_json("../data/ml_data.json", orient="records")

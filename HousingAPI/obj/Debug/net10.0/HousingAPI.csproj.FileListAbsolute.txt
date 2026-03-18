@@ -32,3 +32,6 @@ C:\Users\lukey\OneDrive\Desktop\Projects\housing-ML\HousingAPI\obj\Debug\net10.0
 C:\Users\lukey\OneDrive\Desktop\Projects\housing-ML\HousingAPI\obj\Debug\net10.0\HousingAPI.pdb
 C:\Users\lukey\OneDrive\Desktop\Projects\housing-ML\HousingAPI\obj\Debug\net10.0\HousingAPI.genruntimeconfig.cache
 C:\Users\lukey\OneDrive\Desktop\Projects\housing-ML\HousingAPI\obj\Debug\net10.0\ref\HousingAPI.dll
+C:\Users\lukey\OneDrive\Desktop\Projects\housing-ML\HousingAPI\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\lukey\OneDrive\Desktop\Projects\housing-ML\HousingAPI\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\lukey\OneDrive\Desktop\Projects\housing-ML\HousingAPI\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
