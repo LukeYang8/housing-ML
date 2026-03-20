@@ -50,4 +50,4 @@ ml_features = ["land_area",
 ml_df = df[ml_features + ["purchase_price"]].copy()
 ml_df.dropna(inplace=True)  
 
-ml_df.to_json("../data/ml_data.json", orient="records")
+ml_df.to_csv("../data/ml_data.csv", index=False)

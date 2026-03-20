@@ -1,1 +1,5 @@
 sales.parquet
+/HousingAPI/bin/
+/HousingAPI/obj/
+/ModelTrainer/bin/
+/ModelTrainer/obj/
